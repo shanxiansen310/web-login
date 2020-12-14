@@ -1,0 +1,32 @@
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <welcome-file-list>
+      <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+
+  <filter>
+    <filter-name>encodeFilter</filter-name>
+    <filter-class>servlet.EncodeFilter</filter-class>
+    <init-param>
+        <param-name>encode</param-name>
+        <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+      <filter-name>encodeFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+  <servlet>
+      <servlet-name>Refresh</servlet-name>
+      <servlet-class>Refresh</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Refresh</servlet-name>
+    <url-pattern>/Refresh</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>

@@ -1,0 +1,325 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+body{
+    background-color: #f2f2f2 ;
+}
+
+.container{
+    width: 100%;
+    min-width: 1200px;
+    /*height: 100px;*/
+}
+.header{
+    height: 200px;
+    overflow: hidden;
+    background: whitesmoke;
+}
+.logo{
+    float: left;
+    /*margin-left: 50px;*/
+    /*background-image: url("images/spike.jpg");*/
+    /*background-size: 100%;*/
+    /*width: 600px;*/
+    height: 200px;
+    width: 100%;
+
+    /*background-repeat: repeat;*/
+}
+.logo img{
+    float: left;
+    width: 33%;
+    height: 200px;
+}
+
+#motto{
+    font:25px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    text-align: center;
+    color: #2c2a2c;
+    opacity: .8;
+}
+
+.content{
+    width: 100%;
+    overflow: hidden;
+    background-color: lightgray;
+}
+
+.box{
+    position: relative;
+    width: 70%;
+    height: 600px;
+    margin: 40px auto;
+    border-radius: 45px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.slides{
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    /*margin-left: 40px;*/
+    /*margin-top: 40px;*/
+    background-color: lightgray;
+    overflow: hidden;
+    font-size: 0;    //消除img间隔
+}
+
+.slide-box{
+    width: 500%;
+}
+
+.slides img{
+    width: 20%;
+    height: 600px;
+}
+
+.dot-box{
+    position: absolute;
+    left: 43%;
+    bottom: 10px;
+}
+.dot-box li{
+    display: inline-block;
+    margin: 0 4px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: none;
+    background: darkgray;
+}
+.dot-box .active{
+    background-color: #2c2a2c;
+}
+
+.login{
+    position: absolute;
+    /*float: left;*/
+    width: 51%;
+    left: 49%;
+    height: 100%;
+    overflow: hidden;
+    background: url("../images/bd.jpg");
+    background-size: 100% 100%;
+}
+
+.form-list{
+    position: relative;
+    height: 480px;
+    margin-top: 120px;
+    color: lightgray;
+    text-align: center;
+}
+.login-head{
+    display: inline-block;
+    width: auto;
+    margin: 20px auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #999999;
+    line-height: 45px;
+    letter-spacing: 2px;   //字母间距
+}
+
+/* 外部容器宽度由输入框决定 */
+.input-outline-x{
+    position: relative;        /*placeholder*/
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: 10px auto 15px;
+}
+
+.input-outline{
+    padding: 10px 16px 10px;
+    border:solid black;
+    border-width: 2px 2px 2.5px 2px;
+    border-radius: 20px;
+    transition: border-color .55s;
+}
+.input-outline:focus{
+    border-color: coral;
+    outline: none;
+}
+/* 默认placeholder颜色透明不可见 */
+.input-control:placeholder-shown::placeholder {
+    color: transparent;
+}
+
+.input-label {
+    position: absolute;  /*相对input-outline-x*/
+    font-size: 16px;
+    line-height: 1.5em;
+    left: 10%; top: 20%;
+    color: #a2a9b6;
+    padding: 0 2px;
+    transform-origin: 0 0;
+    pointer-events: none;
+    transition: all .25s;
+}
+/* 线框样式label定位 */
+.input-control:not(:placeholder-shown) ~ .input-label,
+.input-control:focus ~ .input-label {
+    /*color: #2486ff;*/
+    background-color: transparent;
+    transform: scale(0.75) translate(-2px, -32px);
+}
+
+.sign-in{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.sign-in-button{
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .4s;
+}
+.sign-in-button:hover{
+    background-color: #231f24;
+    transform: scale(1.05);
+}
+
+.forgot-bar{
+    color: whitesmoke;
+}
+.forgot-bar a{
+    text-decoration: none;
+    color: whitesmoke;
+    transition: .5s;
+}
+.forgot-bar a:hover{
+    color: #999999;
+    cursor: pointer;
+}
+
+.forgot-left{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.sign-up{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+.sign-up a{
+    text-decoration: none;
+    color: whitesmoke;
+    transition: .3s;
+}
+.sign-up a:hover{
+    color: #999999;
+}
+
+.validation{
+    position: absolute;
+    width: 60%;
+    min-width:250px ;      /*防止collapse*/
+    height: 66%;
+    bottom: 35%;
+    border-radius: 20px;
+    transform: translateX(34%);
+    background-color: white;
+    transition: .5s;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+
+
+.validation span{
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #5f5f5f;
+    line-height: 35px;
+    text-transform: uppercase
+}
+
+.false-box{
+    float: right;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    text-align: center;
+    transform: scale(0.5);
+}
+.false-box:hover{
+    cursor: pointer;
+    transform: scale(0.65);
+    transition: .5s;
+}
+.false-box:hover .left,.false-box:hover .right{
+    background-color: black;
+}
+.left{
+    position: absolute;
+    width: 6px;
+    height: 50px;
+    left: 45%;
+    bottom: -6px;
+    transform: rotate(45deg) ;
+    border-radius: 3px;
+    background: grey;
+}
+.right{
+    position: absolute;
+    width: 6px;
+    height: 50px;
+    bottom: -6px;
+    transform:  translateX(16px) rotate(-45deg) ;
+    border-radius: 3px;
+    background: grey;
+}
+
+.validation .input-outline-x{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.validation .input-outline{
+    border-color: darkgray;
+}
+.validation .input-outline:focus{
+    border-color: black;
+}
+
+.send-code{
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .4s;
+    outline: none;
+}
+.send-code:hover{
+    background-color: #2c2a2c;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
